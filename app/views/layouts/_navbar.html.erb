@@ -11,6 +11,9 @@
         <li class = "list-group-item">
           <%= link_to 'お問い合わせ', contact_path, class: "nav-link #{yield(:contact_active)}" %>
         </li>
+        <li class = "list-group-item">
+          <%= link_to 'マイページ', author_posts_path, class: "nav-link #{yield(:author)}" %>
+        </li>
       </ul>
     </div>
   </div>
@@ -19,7 +22,7 @@
 <nav class = "navbar navbar-light bg-faded">
   <div class = "container">
     <a class = "navbar-brand" href='/'>
-      Hoge<span class = 'light'> Hoga</span>
+        <span class = 'light'><b>Supercalifragilisticexpialidocious</b></span>
     </a>
     <button class = "navbar-toggler hidden-sm-up pull-xs-right" type = "button" data-toggle = "collapse" data-target = "#exCollapsingNavbar">
       $#9776;
@@ -33,6 +36,9 @@
       </li>
       <li class = "nav-item">
         <%= link_to 'お問い合わせ', contact_path, class: "nav-link #{yield(:contact_active)}"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'マイページ', author_posts_path, class: "nav-link #{yield(:author)}"  %>
       </li>
     </ul>
   </div>

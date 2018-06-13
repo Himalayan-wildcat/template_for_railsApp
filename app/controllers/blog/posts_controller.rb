@@ -1,0 +1,13 @@
+module Blog
+  class PostsController < BlogController
+
+    def index
+      @posts = Post.most_recent
+    end
+
+    def show
+      @post = Post.find(params[:id])
+    end
+  end
+
+end    
