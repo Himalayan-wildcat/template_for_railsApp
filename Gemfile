@@ -15,6 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.1'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'devise'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 # gem 'therubyracer', platforms: :ruby
