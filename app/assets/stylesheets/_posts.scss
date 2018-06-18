@@ -42,7 +42,30 @@
       }
     }
   }
+}
 
+.posts.edit, .posts.new {
+  .card {
+    .card-title {
+      margin: 0px;
+      font-size: 15px;
+      text-align: center;
+      background-color: $light-gray;
+    }
+    .list-group {
+      .list-group-item {
+        padding: 10px;
+        input[type='text'], textarea {
+          font-size: 14px;
+          background-color: $light-gray;
+        }
+        textarea {
+          height: 80px;
+        }
+      }
+    }
+  }
+}
   @media screen and (min-width: 34rem) {
     .posts.index .card {
       height: 440px;
@@ -62,5 +85,3 @@
       height: 415px;
     }
   }
-}
-
