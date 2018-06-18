@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<%= provide(:author, 'active') %>
+
+<div>
+  <%= link_to '新規投稿', new_authors_post_path, class: 'btn btn-info'  %>
+</div>
+<br/>
+
+
+<div class="row">
+  <%= render @posts %>
+</div>
+
