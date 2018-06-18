@@ -14,3 +14,13 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+  tinymce.remove();
+  tinymce.init({
+    height: '500',
+    selector:'textarea#post_body',
+    plugins: "codesample image",
+    toolbar: "undo redo | styleselect | bold italic | codesample image"
+  });
+})

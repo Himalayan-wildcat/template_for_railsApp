@@ -5,7 +5,12 @@
       <h4 class="card-title"><%= link_to post.title, post %></h4>
       <p class="published-date"><%= post.create_date_published %></p>
       <p class="card-text"><%= truncate(post.description, length: 130) %></p>
-      <%= link_to 'Read', post, class: 'btn btn-read' %>
+      <tr>
+        <td><%= link_to '詳細', authors_post_path(post), class: 'btn btn-read' %></td>
+        <td><%= link_to '編集', edit_authors_post_path(post), class: 'btn btn-read' %></td>
+        <td><%= link_to '削除', authors_post_path(post), method: :delete, class: 'btn btn-read', data: {confirm: '本当に削除してもいいですか？'} %></td>
+      
+      </tr>
     </div>
   </div>
 </div>
