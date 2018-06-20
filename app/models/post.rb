@@ -16,11 +16,24 @@
 
 class Post < ApplicationRecord
 
-  scope :most_recent, -> { order(id: :desc) }
+  scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
 
-  def create_date_published
-    "投稿日：#{created_at.strftime('%Y年%m月%d日')}"
+  def date_published
+    "投稿日：#{published_at.to_s(:published_at)}"
+  end
+
+  def date_created
+    "作成日 : #{created_at.to_s(:created_at)}"
+  end
+
+  # publish/unpulish action in posts.controller.rb
+  def publish
+    update(published: true, published_at: Time.now)
+  end
+
+  def unpublish
+    update(published: false, published_at: nil)
   end
 
   belongs_to :author
