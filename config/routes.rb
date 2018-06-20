@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   root to: 'blog/posts#index'
  
   namespace :authors do 
-    resources :posts 
+    resources :posts do 
+      put 'publish' => 'posts#publish', on: :member, as: :publish
+      put 'unpublish' => 'posts#unpublish', on: :member, as: :unpublish 
+    end
   end
+
   scope module: 'blog' do
     get 'about' => 'pages#about', as: :about
     get 'contact' => 'pages#contact', as: :contact

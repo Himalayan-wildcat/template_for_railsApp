@@ -3,13 +3,18 @@
       <div class="card-topper" style='background-image: url(<%= post.banner_image_url %>);'></div>
     <div class="card-block">
       <h4 class="card-title"><%= link_to post.title, post %></h4>
-      <p class="published-date"><%= post.create_date_published %></p>
+      <p class="published-date"><%= post.date_created %></p>
+    </br>
       <p class="card-text"><%= truncate(post.description, length: 130) %></p>
       <tr>
-        <td><%= link_to '詳細', authors_post_path(post), class: 'btn btn-read' %></td>
-        <td><%= link_to '編集', edit_authors_post_path(post), class: 'btn btn-read' %></td>
-        <td><%= link_to '削除', authors_post_path(post), method: :delete, class: 'btn btn-read', data: {confirm: '本当に削除してもいいですか？'} %></td>
-      
+        <td><%= link_to '詳細', authors_post_path(post), class: 'btn btn-sm btn-secondary' %></td>
+        <td><%= link_to '編集', edit_authors_post_path(post), class: 'btn btn-sm btn-secondary' %></td>
+        <td><%= link_to '削除', authors_post_path(post), method: :delete, class: 'btn btn-sm btn-secondary', data: {confirm: '本当に削除してもいいですか？'} %></td>
+        <% if post.published? %>
+          <td><%= link_to '掲示板投稿中止', unpublish_authors_post_path(post), method: :put, class: 'btn btn-sm btn-warning' %></td>
+        <% else %>
+          <td><%= link_to '掲示板に投稿する', publish_authors_post_path(post), method: :put, class: 'btn btn-sm btn-success' %></td>
+        <% end %>
       </tr>
     </div>
   </div>

@@ -1,6 +1,6 @@
-module Authors 
+module Authors
   class PostsController < AuthorController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
     @posts = Post.most_recent
@@ -14,6 +14,16 @@ module Authors
   end
 
   def edit
+  end
+
+  def publish
+    @post.publish
+    redirect_to authors_posts_url
+  end
+
+  def unpublish
+    @post.unpublish
+    redirect_to authors_posts_url
   end
 
   def create
@@ -52,11 +62,11 @@ module Authors
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @post = current_author.posts.find(params[:id])
     end
 
     def post_params
       params.require(:post).permit(:title, :body, :description, :banner_image_url)
     end
   end
-end    
+end
