@@ -20,7 +20,11 @@ class Post < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   def date_published
-    "投稿日：#{published_at.to_s(:published_at)}"
+    if published_at.present?
+      "投稿日：#{published_at.to_s(:published_at)}"
+    else
+      "投稿日 : まだ投稿されていません。"
+    end
   end
 
   def date_created

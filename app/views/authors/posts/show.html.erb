@@ -4,8 +4,14 @@
 <div class = "row">
   <div class = "col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
     <h1><%= @post.title %></h1>
-    <p><%= @post.create_date_published  %></p>
+    <p><%= @post.date_created  %></p>
+    <p><%= @post.date_published  %></p>
+    </br>
     <%= @post.body.html_safe %>
+  </br>
+    <tr>
+      <td><%= link_to '編集', edit_authors_post_path(@post), class: 'btn btn-md btn-secondary' %></td>
+      <td><%= link_to '削除', authors_post_path(@post), method: :delete, class: 'btn btn-md btn-danger', data: {confirm: '本当に削除してもいいですか？'} %></td>
+    </tr>
   </div>
 </div>
-

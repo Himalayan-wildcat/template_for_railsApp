@@ -17,6 +17,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'devise'
 gem 'annotate'
+gem 'will_paginate', '~> 3.1.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 # gem 'therubyracer', platforms: :ruby

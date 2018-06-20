@@ -9,7 +9,7 @@
       <tr>
         <td><%= link_to '詳細', authors_post_path(post), class: 'btn btn-sm btn-secondary' %></td>
         <td><%= link_to '編集', edit_authors_post_path(post), class: 'btn btn-sm btn-secondary' %></td>
-        <td><%= link_to '削除', authors_post_path(post), method: :delete, class: 'btn btn-sm btn-secondary', data: {confirm: '本当に削除してもいいですか？'} %></td>
+        <td><%= link_to '削除', authors_post_path(post), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: '本当に削除してもいいですか？'} %></td>
         <% if post.published? %>
           <td><%= link_to '掲示板投稿中止', unpublish_authors_post_path(post), method: :put, class: 'btn btn-sm btn-warning' %></td>
         <% else %>
