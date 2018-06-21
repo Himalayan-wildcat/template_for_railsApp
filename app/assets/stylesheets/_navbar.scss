@@ -1,11 +1,12 @@
 .navbar {
   border-radius: 0;
   margin-bottom: 20px;
-  background-color: $light-gray;
+  background-color: $primary-color;
   .navbar-brand {
     font-weight: bolder;
     .light {
-      font-weight: 300;
+      font-weight: 500;
+      color: $white;
     }
   }
   .navbar-toggler {
@@ -16,6 +17,18 @@
     display: -webkit-inline-box;
     .nav-item {
       padding-right: 30px;
+      a {
+        color: $white;
+      }
+    }
+    .dropdown-menu {
+      position: absolute;
+      min-width: 5rem;
+      top: 80%;
+      a {
+        color:black;
+        font-size: 12px;
+      }
     }
   }
 }

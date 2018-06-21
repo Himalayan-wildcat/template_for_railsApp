@@ -1,14 +1,24 @@
 .posts.index {
-  .pagignation {
-    width: 100%;
-    text-align: center;
-    display: inherit;
-    padding-left: 450px;
+  .apple_pagination{
+    background-color: $primary-color;
+    a {
+      color: $white;
+    }
+    .current {
+      color: $white;
+    }
+    .pagignation {
+      width: 100%;
+      text-align: center;
+      display: inherit;
+      padding-left: 450px;
+    }
   }
   .card {
+    background-color: white;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid #181818;
+    // border-bottom: 1px solid #181818;
     height: 400px;
     margin-bottom: 20px;
     .card-topper {
@@ -19,15 +29,6 @@
     }
     .card-block {
       padding: 10px;
-      .btn-read {
-        background-color: #e8e8e8;
-        font-weight: 350;
-        border-radius: 3;
-        color: black;
-        &:hover {
-          background-color: #d8d8d8;
-        }
-      }
       .card-title {
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
@@ -45,6 +46,7 @@
       }
       .card-text {
         font-size: 0.9rem;
+        color: black;
       }
     }
   }
