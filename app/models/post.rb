@@ -41,5 +41,6 @@ class Post < ApplicationRecord
   end
 
   belongs_to :author
+  # has_many :comments
 
 end
